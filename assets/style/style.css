@@ -1,0 +1,128 @@
+:root {
+  --color--grey-950: #131518;
+  --color--grey-900: #262e38;
+  --color--grey-500: #969fad;
+  --color--orange-500: #fc7614;
+  --color--gradient: radial-gradient(#232a34, #181e27);
+
+  --fs-pr1: 2.8rem;
+  --lh-pr1: 3.5rem;
+  --fs-pr2: 2.4rem;
+  --lh-pr2: 3rem;
+  --fs-pr3: 1.6rem;
+  --lh-pr3: 2.4rem;
+  --ls-3: 0.02rem;
+  --fs-pr4: 1.5rem;
+  --lh-pr4-b: 1.9rem;
+  --ls-4-b: 0.2rem;
+  --lh-pr4-r: 2.4rem;
+  --fs-pr5: 1.4rem;
+  --lh-pr5-b: 1.8rem;
+  --lh-pr5-sb: 2.4rem;
+  --lh-pr5-r: 2.2rem;
+  --ls-5-b: 0.187rem;
+  --ls-5-sb: 0.017rem;
+
+  --space-0: 0rem;
+  --space-100: 0.8rem;
+  --space-200: 1.6rem;
+  --space-300: 2.4rem;
+  --space-400: 3.2rem;
+  --space-500: 4rem;
+  --space-1300: 10.4rem;
+  --space-1700: 13.4rem;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: inherit;
+}
+
+body {
+  font-family: "Overpass", serif;
+}
+
+/* btn */
+.btn {
+  display: block;
+  width: 100%;
+  background-color: var(--color--orange-500);
+  border: 0;
+  border-radius: 2.2rem;
+  font-size: var(--fs-pr5);
+  line-height: var(--lh-pr5-sb);
+  letter-spacing: var(--ls-5-sb);
+  font-weight: 600;
+  padding: clamp(0.6rem, 2vw, 1.2rem) 0;
+  transition: all 0.2s ease-out;
+}
+.btn:hover,
+.btn:active {
+  background-color: white;
+}
+
+/* list item */
+.selector--list {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  transition: all 150ms;
+}
+.selector--item {
+  position: relative;
+  background-color: var(--color--grey-900);
+  color: var(--color--grey-500);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--fs-pr3);
+  line-height: var(--lh-pr3);
+  font-weight: bold;
+  letter-spacing: var(--ls-3);
+  width: 5.4rem;
+  height: 5.4rem;
+  transition: all 0.15s ease-out;
+}
+
+.selector--item:hover {
+  background-color: white;
+  color: var(--color--grey-950);
+}
+
+.selector--item.active {
+  color: var(--color--grey-650);
+  background-color: var(--color--orange-500);
+}
+
+/* card */
+
+.card {
+  max-width: 41.2rem;
+  background: var(--color--gradient);
+  padding: 3.4rem 3rem;
+  border-radius: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.card--content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.card--title {
+  color: white;
+  font-size: var(--fs-pr1);
+  line-height: var(--lh-pr1);
+  font-weight: 700;
+}
+
+.card--description {
+  color: var(--color--grey-500);
+  font-size: var(--fs-pr4);
+  line-height: var(--lh-pr4-r);
+  font-weight: 400;
+}
