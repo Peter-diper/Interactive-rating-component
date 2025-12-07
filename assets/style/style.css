@@ -172,17 +172,14 @@ body {
 
 /* modal */
 .modal {
-  position: relative;
-  z-index: 10;
-  max-width: 41.2rem;
+  height: 100vh;
   background: var(--color--gradient);
   display: flex;
   flex-direction: column;
   gap: var(--space-400);
-  padding: 4.4rem 3.6rem;
   justify-content: center;
+  padding: 4.4rem 3.6rem;
   align-items: center;
-  border-radius: 3rem;
 }
 
 .rate--message {
@@ -214,6 +211,26 @@ body {
   line-height: var(--lh-pr4-r);
 }
 
+@media screen and (min-width: 40rem) {
+  .modal {
+    height: auto;
+    position: relative;
+    z-index: 10;
+    max-width: 41.2rem;
+    background: var(--color--gradient);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-400);
+    padding: 4.4rem 3.6rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3rem;
+  }
+  .container {
+    max-width: 95vw;
+  }
+}
+
 /* extra */
 
 .hide {
@@ -222,7 +239,6 @@ body {
 
 .container {
   width: 100%;
-  max-width: 95vw;
   margin: 0 auto;
 }
 

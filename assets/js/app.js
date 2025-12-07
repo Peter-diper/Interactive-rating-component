@@ -3,6 +3,16 @@ const submitBtn = document.querySelector(".btn");
 const modal = document.querySelector(".modal");
 const card = document.querySelector(".card");
 const reatPlace = document.querySelector("#rated--number");
+const body = document.querySelector("body");
+
+body.addEventListener("click", (e) => {
+  if (e.target.closest(".card")) {
+    return;
+  }
+  !modal.classList.contains("hide") && card.classList.remove("hide");
+  card.style.animation = "up 1s";
+  modal.classList.add("hide");
+});
 
 listItemsNodeList.forEach((listItem, currentIndex) => {
   // addEvent
@@ -14,7 +24,7 @@ listItemsNodeList.forEach((listItem, currentIndex) => {
   function add(e) {
     check(e);
     e.target.classList.add("active");
-    submitBtn.addEventListener("click", () => {
+    submitBtn.addEventListener("click", (event) => {
       modal.classList.remove("hide");
       modal.style.animation = "up 1s";
       card.classList.add("hide");
@@ -50,11 +60,3 @@ listItemsNodeList.forEach((listItem, currentIndex) => {
     });
   }
 });
-
-// فکر کن یه مودا میخوایم درست کنیم
-
-// می خوام به تگ بادی بگم زمانی که روش زدم بره و مودال رو حذف کنه
-
-// ولی قبلش باید یه دکمه بزنم که مدال بیاد بالا
-
-// الان دارم به بادی ایونت کلیک میده ولی زمانی که رو دکمه کلیک میکنم بادی هست که کلیک میشه چیکارکنم ؟
