@@ -15,8 +15,30 @@
     <link rel="stylesheet" href="./assets/style/golobal.css" />
   </head>
   <body>
-    <main>
-      <div class="modal">
+    <main class="container">
+      <!-- rating card -->
+      <section class="card">
+        <i class="star--icon"></i>
+        <div class="card--content">
+          <h1 class="card--title">How did we do?</h1>
+          <p class="card--description">
+            Please let us know how we did with your support request. All
+            feedback is appreciated to help us improve our offering!
+          </p>
+          <!-- rate list list -->
+          <ul class="selector--list">
+            <li class="selector--item">1</li>
+            <li class="selector--item">2</li>
+            <li class="selector--item">3</li>
+            <li class="selector--item">4</li>
+            <li class="selector--item">5</li>
+          </ul>
+        </div>
+        <button class="btn" type="submit">SUBMIT</button>
+      </section>
+
+      <!-- Thanks modal message -->
+      <div class="modal hide">
         <img
           src="./assets/images/illustration-thank-you.svg"
           alt=""
@@ -36,5 +58,8 @@
         </div>
       </div>
     </main>
+
+    <!-- script -->
+    <script src="./assets/js/app.js"></script>
   </body>
 </html>

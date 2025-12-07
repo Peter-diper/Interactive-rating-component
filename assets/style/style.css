@@ -39,7 +39,13 @@ html {
 }
 
 body {
+  position: relative;
   font-family: "Overpass", serif;
+  min-height: 100vh;
+  background-color: var(--color--grey-950);
+  display: grid;
+  place-content: center;
+  z-index: 1;
 }
 
 /* btn */
@@ -73,31 +79,50 @@ body {
   background-color: var(--color--grey-900);
   color: var(--color--grey-500);
   border-radius: 50%;
-  display: flex;
+  display: grid;
   justify-content: center;
+  align-content: center;
+  justify-items: center;
   align-items: center;
   font-size: var(--fs-pr3);
-  line-height: var(--lh-pr3);
+  line-height: 0;
   font-weight: bold;
   letter-spacing: var(--ls-3);
-  width: 5.4rem;
-  height: 5.4rem;
-  transition: all 0.15s ease-out;
+  width: 4.2rem;
+  height: 4.2rem;
+  transition: all 0.2s ease-in;
 }
 
 .selector--item:hover {
   background-color: white;
   color: var(--color--grey-950);
+  transform: scale(1.12);
 }
 
 .selector--item.active {
   color: var(--color--grey-650);
   background-color: var(--color--orange-500);
 }
+@media screen and (min-width: 27rem) {
+  .selector--item {
+    width: 5.4rem;
+    height: 5.4rem;
+  }
+}
 
+@media screen and (min-width: 40rem) {
+  .selector--item {
+    cursor: pointer;
+  }
+  .btn {
+    cursor: pointer;
+  }
+}
 /* card */
 
 .card {
+  position: relative;
+  z-index: 20;
   max-width: 41.2rem;
   background: var(--color--gradient);
   padding: 3.4rem 3rem;
@@ -115,16 +140,21 @@ body {
 
 .card--title {
   color: white;
-  font-size: var(--fs-pr1);
-  line-height: var(--lh-pr1);
+  font-size: clamp(var(--fs-pr2), 5vw, var(--fs-pr1));
+  line-height: clamp(var(--lh-pr2), 5vw, var(--lh-pr1));
   font-weight: 700;
+  transition: all 200ms ease-out;
 }
 
 .card--description {
   color: var(--color--grey-500);
-  font-size: var(--fs-pr4);
-  line-height: var(--lh-pr4-r);
+  font-size: clamp(var(--fs-pr5), 5vw, var(--fs-pr4));
+  line-height: clamp(var(--lh-pr5-r), 5vw, var(--lh-pr4-r));
   font-weight: 400;
+  transition: all 200ms ease-out;
+}
+
+@media screen and (min-width: 40rem) {
 }
 
 /* icon */
@@ -142,6 +172,8 @@ body {
 
 /* modal */
 .modal {
+  position: relative;
+  z-index: 10;
   max-width: 41.2rem;
   background: var(--color--gradient);
   display: flex;
@@ -180,4 +212,35 @@ body {
   color: var(--color--grey-500);
   font-size: var(--fs-pr4);
   line-height: var(--lh-pr4-r);
+}
+
+/* extra */
+
+.hide {
+  display: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 95vw;
+  margin: 0 auto;
+}
+
+.selector--item.bg--orange {
+  background-color: var(--color--orange-500);
+  color: var(--color--grey-950);
+  transition: background-color 0.5s ease-out, color 0.2s;
+}
+
+/* animation */
+@keyframes up {
+  from {
+    transform: translateY(30px);
+    opacity: 0.1;
+  }
+
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
 }
